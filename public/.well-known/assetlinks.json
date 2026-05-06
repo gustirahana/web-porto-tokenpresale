@@ -1,0 +1,11 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.adstnetwork.sp.twa",
+    "sha256_cert_fingerprints": [
+      "3C:C5:FA:BF:63:60:EB:6A:75:38:BC:D1:DC:54:5C:66:6B:2A:09:8D:22:D1:02:0D:2F:65:E0:D6:22:75:0E:D9"
+    ]
+  }
+}]
+

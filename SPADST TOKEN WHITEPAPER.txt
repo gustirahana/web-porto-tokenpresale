@@ -1,0 +1,492 @@
+SPADST TOKEN WHITEPAPER
+
+==================================================
+
+1. PENDAHULUAN
+
+SPADST adalah token utama yang menjadi fondasi ekonomi dalam ekosistem S-Project dan Duel Instinct.
+
+Ekosistem ini dirancang untuk menciptakan sistem ekonomi digital yang:
+
+• transparan
+• terstruktur
+• berorientasi pada komunitas
+• berkelanjutan dalam jangka panjang
+
+SPADST tidak hanya berfungsi sebagai token utilitas, tetapi juga sebagai aset ekonomi komunitas yang berkembang bersama ekosistem.
+
+Seluruh sistem ekonomi dalam proyek ini dibangun melalui tiga komponen utama:
+
+1. Program S-Project
+2. Presale SPADST
+3. Duel Instinct PvP Strategic Economy Game
+
+S-Project menjadi fondasi pembentukan komunitas dan distribusi awal reward.
+
+Presale menyediakan distribusi awal token kepada komunitas serta pembentukan likuiditas pasar.
+
+Duel Instinct menjadi motor ekonomi yang menghasilkan revenue dari aktivitas pemain.
+
+==================================================
+
+2. TOTAL SUPPLY TOKEN
+
+Total Supply SPADST
+
+200,020,000 SPADST
+
+Distribusi token dalam ekosistem:
+
+Presale
+21,000,000 SPADST
+
+Pool Reward S-Project
+50,000,000 SPADST
+
+Liquidity Allocation
+30,003,000 SPADST
+
+Duel Instinct Ecosystem Reward
+99,017,000 SPADST
+
+==================================================
+
+3. TOKEN DISTRIBUTION DIAGRAM
+
+                 TOTAL SUPPLY
+                200,020,000
+                     │
+     ┌───────────────┼───────────────┐
+     │               │               │
+     ▼               ▼               ▼
+  Presale      S-Project Pool    Liquidity
+21,000,000      50,000,000      30,003,000
+                                        │
+                                        ▼
+                               DEX Liquidity Pool
+
+                       │
+                       ▼
+      Duel Instinct Ecosystem Reward
+              99,017,000
+
+==================================================
+
+4. PROGRAM S-PROJECT
+
+S-Project adalah fase awal ekosistem yang bertujuan untuk:
+
+• membangun komunitas
+• mendistribusikan reward secara bertahap
+• memperkenalkan sistem ekonomi SPADST kepada komunitas
+
+Program ini menggunakan sistem:
+
+STAKING OFF-CHAIN
+
+Reward berasal dari:
+
+POOL REWARD S-PROJECT
+
+Total kapasitas pool:
+
+50,000,000 SPADST
+
+Struktur pool:
+
+Active Reward Pool
+20,000,000 SPADST
+
+Locked Reward Reserve
+30,000,000 SPADST
+
+==================================================
+
+5. MEKANISME DISTRIBUSI REWARD
+
+Reward dari S-Project tidak langsung masuk blockchain.
+
+Reward disimpan terlebih dahulu di:
+
+Platform Balance (Off-chain)
+
+Alur distribusi:
+
+S-Project Participation
+↓
+Reward Distribution
+↓
+Platform Balance (Off-chain)
+↓
+Pool Reward S-Project Withdraw
+↓
+SPADST On-chain
+
+Aturan withdraw:
+
+• withdraw 1 kali per minggu
+• fee platform 10%
+
+==================================================
+
+6. S-PROJECT REWARD FLOW
+
+        S-Project Staking
+               │
+               ▼
+        Reward Distribution
+               │
+               ▼
+     Platform Balance (Off-chain)
+               │
+               ▼
+   Pool Reward S-Project Withdraw
+               │
+               ▼
+          SPADST On-chain
+               │
+               ▼
+        Market / Holder
+
+==================================================
+
+7. RANK WITHDRAW SYSTEM
+
+VIP 50
+QA 100
+QB 110
+QC 120
+QD 130
+QE 140
+QF 160
+QG 170
+QH 180
+QI 190
+QJ 200
+QK 210
+QL 220
+QM 230
+QN 240
+QO 250
+QP 300
+QQ 320
+QR 340
+QS 360
+QT 380
+QU 400
+QV 420
+QW 440
+QX 460
+QY 480
+QZ 500
+
+==================================================
+
+8. PRESALE
+
+Total Presale Allocation
+
+21,000,000 SPADST
+
+Batch price:
+
+Batch 1
+0.000025 SOL
+
+Batch 2
+0.00003 SOL
+
+Batch 3
+0.000035 SOL
+
+Batch 4
+0.00004 SOL
+
+Batch 5
+0.000045 SOL
+
+Batch 6
+0.00005 SOL
+
+Listing price
+
+0.000055 SOL
+
+==================================================
+
+9. PRESALE WITHDRAW SYSTEM
+
+Withdraw maksimal:
+
+3 kali per minggu
+
+Tier holder:
+
+Whale ≥1,000,000 withdraw 800
+Shark ≥100,000 withdraw 400
+Dolphin ≥50,000 withdraw 200
+Fish ≥10,000 withdraw 50
+Shrimp ≥1,000 withdraw 10
+
+==================================================
+
+10. PRESALE DISTRIBUTION FLOW
+
+        Presale Allocation
+            21,000,000
+                 │
+                 ▼
+          Community Holders
+                 │
+                 ▼
+         Tier Withdraw System
+                 │
+                 ▼
+            SPADST Market
+
+==================================================
+
+11. LIQUIDITY ALLOCATION
+
+Liquidity Allocation
+
+30,003,000 SPADST
+
+Initial Liquidity
+
+3,000,000 SPADST
+≈165 SOL
+
+Status Liquidity
+
+PERMANENT LOCK
+
+==================================================
+
+12. DUEL INSTINCT GAME
+
+Duel Instinct adalah PvP Strategic Economy Game yang lahir dari komunitas S-Project.
+
+Game ini menggabungkan:
+
+• PvP competitive gameplay
+• strategi ekonomi pemain
+• pengelolaan aset digital
+
+==================================================
+
+13. GAME REVENUE MODEL
+
+Player Activity
+↓
+In-game Item Purchase
+↓
+Game Revenue
+
+==================================================
+
+14. DUEL INSTINCT ECONOMIC ENGINE
+
+            Player Activity
+                  │
+                  ▼
+          In-game Interaction
+                  │
+                  ▼
+           Item Purchase
+                  │
+                  ▼
+             Game Revenue
+           ┌──────┴──────┐
+           │             │
+           ▼             ▼
+     Liquidity Growth  Treasury
+           │             │
+           ▼             ▼
+    Stronger Market   Future Buyback
+
+==================================================
+
+15. LIQUIDITY GROWTH
+
+Game Revenue
+↓
+Liquidity Allocation
+↓
+DEX Liquidity Pool
+
+==================================================
+
+16. TREASURY & BUYBACK
+
+Game Revenue
+↓
+Treasury Allocation
+↓
+Market Buyback
+↓
+Treasury Reserve
+
+==================================================
+
+17. TOKEN UTILITY
+
+SPADST berfungsi sebagai:
+
+• Reward Asset
+• Market Asset
+• Strategic Game Economy Asset
+• Community Asset
+
+==================================================
+
+18. SUPPLY CONTROL ARCHITECTURE
+
+Kontrol distribusi token:
+
+• Presale Tier Withdraw
+• Rank Withdraw Reward
+• Withdraw Frequency Limit
+• Withdraw Fee 10%
+• Transaction Fee 0.25%
+• Revenue Driven Liquidity
+
+==================================================
+
+19. SPADST SUPPLY CONTROL DIAGRAM
+
+             Token Allocation
+                    │
+                    ▼
+          Controlled Distribution
+                    │
+     ┌──────────────┼──────────────┐
+     ▼              ▼              ▼
+Presale Tier   Rank Withdraw   Withdraw
+Withdraw       Reward System   Frequency
+     │              │              │
+     └──────────────┴──────────────┘
+                    ▼
+              SPADST On-chain
+                    │
+                    ▼
+                Market
+
+==================================================
+
+20. GAME RESOURCE FLOW
+
+Player Activity
+↓
+Resource Generation
+↓
+Resource Utilization
+↓
+Resource Demand
+↓
+Item Purchase
+↓
+Game Revenue
+↓
+Liquidity Growth
+↓
+Stronger Ecosystem
+
+==================================================
+
+21. ECOSYSTEM LOOP
+
+S-Project
+↓
+Community Growth
+↓
+Presale
+↓
+SPADST Market
+↓
+Game Activity
+↓
+Game Revenue
+↓
+Liquidity Growth
+↓
+Treasury
+↓
+Stronger Ecosystem
+
+==================================================
+
+22. WALLET TRANSPARENCY POLICY
+
+Wallet kategori:
+
+Presale Wallet
+Reward Pool Wallet
+Liquidity Wallet
+Ecosystem Wallet
+Treasury Wallet
+
+Semua wallet dapat diaudit publik melalui blockchain.
+
+==================================================
+
+23. DEVELOPER REVENUE MODEL
+
+Developer revenue berasal dari:
+
+Transaction Fee 0.25%
+Liquidity Pool Trading Fee
+
+DEX Trading
+↓
+Developer Revenue
+↓
+Game Development
+
+==================================================
+
+24. RISK DISCLOSURE
+
+Risiko yang mungkin terjadi:
+
+• volatilitas harga token
+• perubahan pasar kripto
+• risiko teknologi blockchain
+• risiko pengembangan produk
+
+==================================================
+
+25. DEVELOPMENT ROADMAP
+
+Phase 1
+S-Project Launch
+
+Phase 2
+Presale SPADST Launch
+
+Phase 3
+Duel Instinct Development Launch
+
+Phase 4
+DEX Listing Launch 24 April 2026
+
+Phase 5
+Withdrawal On-chain 1 Mei 2026
+
+Phase 5
+Economic Expansion Step by Step
+
+==================================================
+
+26. LONG TERM VISION
+
+Visi ekosistem:
+
+• pertumbuhan komunitas global
+• pengembangan fitur game
+• ekspansi ekonomi digital
+• penguatan treasury
+
+SPADST dirancang sebagai aset ekonomi komunitas yang berkembang bersama ekosistem Duel Instinct.
+
+==================================================

@@ -1,0 +1,1582 @@
+// =============================================
+//  SP ADST — Premium Crypto UI System
+//  Dark Crypto + Glassmorphism + Gradients + Micro-Animations
+// =============================================
+
+// --- Color Palette (BlockDAG Inspired — Pure Black + Electric Cyan + Neon Green) ---
+:root {
+  --sp-bg-primary: #03000a;
+  --sp-bg-secondary: #0a041a;
+  --sp-bg-tertiary: #110826;
+  --sp-accent-purple: #6d28d9;
+  --sp-accent-purple-light: #8b5cf6;
+  --sp-accent-cyan: #00D4FF;
+  --sp-accent-cyan-light: #67e8f9;
+  --sp-accent-green: #10b981;
+  --sp-accent-green-light: #34d399;
+  --sp-accent-orange: #f59e0b;
+  --sp-accent-red: #ef4444;
+  --sp-accent-pink: #d946ef;
+  --sp-accent-gold: #d4a853;
+  --sp-accent-gold-light: #f0d78c;
+  --sp-accent-gold-deep: #b8942d;
+  --sp-text-primary: #FFFFFF;
+  --sp-text-secondary: #A0A0A0;
+  --sp-text-muted: #6b7280;
+  --sp-border-glass: rgba(139, 92, 246, 0.15);
+  --sp-border-glass-strong: rgba(139, 92, 246, 0.3);
+  --sp-glass-bg: rgba(10, 4, 26, 0.85);
+  --sp-glass-bg-hover: rgba(15, 6, 35, 0.95);
+  --sp-glow-purple: rgba(139, 92, 246, 0.5);
+  --sp-glow-cyan: rgba(0, 212, 255, 0.35);
+  --sp-glow-green: rgba(16, 185, 129, 0.35);
+  --sp-glow-gold: rgba(212, 168, 83, 0.25);
+  --sp-gradient-main: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  --sp-gradient-cyan: linear-gradient(135deg, #00D4FF 0%, #3b82f6 100%);
+  --sp-gradient-gold: linear-gradient(135deg, #d4a853 0%, #f0d78c 50%, #b8942d 100%);
+  --sp-gradient-prestige: linear-gradient(135deg, #8b5cf6 0%, #00D4FF 100%);
+  --sp-gradient-green: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  --sp-gradient-warm: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+  --sp-gradient-bg: radial-gradient(ellipse at top, #0a041a 0%, #03000a 60%);
+  --sp-radius: 10px;
+  --sp-radius-sm: 8px;
+  --sp-radius-xs: 5px;
+}
+
+// --- Keyframe Animations ---
+@keyframes sp-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sp-fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes sp-pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+  }
+}
+
+@keyframes sp-starfield {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+
+@keyframes sp-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes sp-float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes sp-pulse {
+
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes sp-countPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes sp-gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// --- Utility Classes ---
+.sp-animate-in {
+  animation: sp-fadeInUp 0.5s ease-out;
+}
+
+.sp-animate-in-delay-1 {
+  animation: sp-fadeInUp 0.5s ease-out 0.1s both;
+}
+
+.sp-animate-in-delay-2 {
+  animation: sp-fadeInUp 0.5s ease-out 0.2s both;
+}
+
+.sp-animate-in-delay-3 {
+  animation: sp-fadeInUp 0.5s ease-out 0.3s both;
+}
+
+.sp-animate-in-delay-4 {
+  animation: sp-fadeInUp 0.5s ease-out 0.4s both;
+}
+
+.sp-spin {
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+// --- Sharp Dark Card (BlockDAG Style) ---
+.card-glass {
+  background: var(--sp-glass-bg) !important;
+  border: 1px solid var(--sp-border-glass) !important;
+  border-radius: var(--sp-radius) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+  color: var(--sp-text-primary);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2), 0 4px 24px rgba(0, 0, 0, 0.6);
+    border-color: rgba(0, 212, 255, 0.2) !important;
+  }
+
+  .card-header {
+    background: transparent !important;
+    border-bottom: 1px solid var(--sp-border-glass) !important;
+    color: var(--sp-text-primary);
+  }
+
+  .card-body {
+    color: var(--sp-text-primary);
+    width: 100%;
+
+    .d-flex {
+      display: flex !important;
+    }
+  }
+}
+
+.card-glass-accent {
+  @extend .card-glass;
+  border-top: 2px solid #00D4FF !important;
+}
+
+.card-glass-purple {
+  @extend .card-glass;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(139, 92, 246, 0.2);
+  animation: sp-pulseGlow 4s ease-in-out infinite;
+}
+
+// --- Gradient Buttons ---
+.btn-gradient {
+  background: var(--sp-gradient-main);
+  background-size: 200% 200%;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 600;
+  border-radius: var(--sp-radius-sm) !important;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.5s ease;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--sp-glow-purple);
+
+    &::before {
+      left: 100%;
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.btn-gradient-green {
+  @extend .btn-gradient;
+  background: var(--sp-gradient-green);
+
+  &:hover {
+    box-shadow: 0 8px 25px var(--sp-glow-green);
+  }
+}
+
+.btn-gradient-outline {
+  background: transparent;
+  border: 1px solid rgba(139, 92, 246, 0.5) !important;
+  color: var(--sp-accent-purple-light) !important;
+  font-weight: 600;
+  border-radius: var(--sp-radius-sm) !important;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(139, 92, 246, 0.15);
+    border-color: var(--sp-accent-purple) !important;
+    color: #fff !important;
+    transform: translateY(-1px);
+  }
+}
+
+// --- Dark Inputs ---
+.input-dark {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid var(--sp-border-glass) !important;
+  color: var(--sp-text-primary) !important;
+  border-radius: var(--sp-radius-xs) !important;
+  padding: 12px 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &::placeholder {
+    color: var(--sp-text-muted) !important;
+  }
+
+  &:focus {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: var(--sp-accent-purple) !important;
+    box-shadow: 0 0 0 3px var(--sp-glow-purple) !important;
+    color: var(--sp-text-primary) !important;
+    outline: none;
+  }
+
+  &:read-only {
+    background: rgba(255, 255, 255, 0.03) !important;
+    color: var(--sp-text-secondary) !important;
+  }
+}
+
+.input-group-dark {
+  .input-group-text {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid var(--sp-border-glass) !important;
+    color: var(--sp-text-secondary) !important;
+    font-weight: 600;
+  }
+}
+
+// --- Countdown Timer Boxes ---
+.countdown-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown-box {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: var(--sp-radius-sm);
+  padding: 16px 20px;
+  min-width: 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: sp-countPulse 3s ease-in-out infinite;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--sp-gradient-prestige);
+  }
+
+  .countdown-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--sp-text-primary);
+    line-height: 1;
+    margin-bottom: 4px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .countdown-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--sp-text-muted);
+    font-weight: 600;
+  }
+}
+
+.countdown-separator {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--sp-accent-purple-light);
+  animation: sp-pulse 1.5s ease-in-out infinite;
+}
+
+// --- Premium Progress Bar ---
+.progress-premium {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  height: 14px;
+  overflow: hidden;
+  position: relative;
+
+  .progress-bar-premium {
+    height: 100%;
+    border-radius: 12px;
+    background: var(--sp-gradient-main);
+    background-size: 200% 200%;
+    animation: sp-gradientShift 3s ease infinite;
+    position: relative;
+    transition: width 1s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      animation: sp-shimmer 2s linear infinite;
+      background-size: 200% 100%;
+    }
+  }
+}
+
+// --- Premium Table ---
+.table-premium {
+  color: var(--sp-text-primary) !important;
+
+  thead {
+    th {
+      background: rgba(139, 92, 246, 0.1) !important;
+      color: var(--sp-text-secondary) !important;
+      border-bottom: 1px solid rgba(139, 92, 246, 0.2) !important;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 14px 16px !important;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid var(--sp-border-glass) !important;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background: rgba(139, 92, 246, 0.06) !important;
+      }
+
+      td {
+        color: var(--sp-text-primary) !important;
+        padding: 14px 16px !important;
+        vertical-align: middle;
+        border: none !important;
+      }
+    }
+  }
+}
+
+// --- Stat Card (for Balance, etc.) ---
+.stat-card {
+  @extend .card-glass;
+  padding: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 3px solid transparent !important;
+  border-image: var(--sp-gradient-prestige) 1 !important;
+  border-image-slice: 0 0 0 1 !important;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px var(--sp-glow-gold);
+  }
+
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+
+    &.icon-purple {
+      background: rgba(139, 92, 246, 0.2);
+      color: var(--sp-accent-purple-light);
+    }
+
+    &.icon-green {
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--sp-accent-green-light);
+    }
+  }
+
+  .stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--sp-text-primary);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--sp-text-secondary);
+    font-weight: 500;
+  }
+}
+
+// --- Alert Variants ---
+.alert-glass {
+  background: rgba(239, 68, 68, 0.1) !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+  color: #fca5a5 !important;
+  border-radius: var(--sp-radius-sm) !important;
+  backdrop-filter: blur(10px);
+}
+
+.alert-glass-warning {
+  background: rgba(245, 158, 11, 0.1) !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+  color: #fcd34d !important;
+  border-radius: var(--sp-radius-sm) !important;
+
+  strong,
+  .fw-bold {
+    color: #fbbf24 !important;
+  }
+}
+
+.alert-glass-success {
+  background: rgba(16, 185, 129, 0.1) !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+  color: #6ee7b7 !important;
+  border-radius: var(--sp-radius-sm) !important;
+}
+
+// --- Info Badge / Chip ---
+.info-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  &.chip-purple {
+    background: rgba(139, 92, 246, 0.15);
+    color: var(--sp-accent-purple-light);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+  }
+
+  &.chip-green {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--sp-accent-green-light);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+  }
+
+  &.chip-cyan {
+    background: rgba(34, 211, 238, 0.15);
+    color: var(--sp-accent-cyan);
+    border: 1px solid rgba(34, 211, 238, 0.25);
+  }
+}
+
+// --- Login Page ---
+.sp-login-bg {
+  min-height: 100vh;
+  background: var(--sp-gradient-bg);
+  position: relative;
+  overflow: hidden;
+
+  // Floating orbs (pure CSS)
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: sp-float 8s ease-in-out infinite;
+  }
+
+  &::before {
+    width: 300px;
+    height: 300px;
+    background: var(--sp-accent-purple);
+    top: -100px;
+    right: -50px;
+    animation-delay: 0s;
+  }
+
+  &::after {
+    width: 250px;
+    height: 250px;
+    background: var(--sp-accent-cyan);
+    bottom: -80px;
+    left: -30px;
+    animation-delay: 4s;
+  }
+}
+
+.sp-login-card {
+  @extend .card-glass;
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+  animation: sp-fadeInUp 0.6s ease-out;
+  position: relative;
+  z-index: 1;
+
+  .card-body {
+    padding: 2rem !important;
+  }
+}
+
+// --- QR Code Section ---
+.qr-container {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--sp-border-glass);
+  border-radius: var(--sp-radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: var(--sp-radius);
+    padding: 1px;
+    background: var(--sp-gradient-prestige);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
+  .qr-image-wrap {
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15);
+  }
+}
+
+// --- Coming Soon State ---
+.coming-soon-container {
+  text-align: center;
+  padding: 60px 20px;
+
+  .coming-soon-icon {
+    font-size: 4rem;
+    color: var(--sp-accent-gold-light);
+    margin-bottom: 20px;
+    animation: sp-float 3s ease-in-out infinite;
+  }
+
+  .coming-soon-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: var(--sp-gradient-prestige);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+  }
+
+  .coming-soon-subtitle {
+    font-size: 1rem;
+    color: var(--sp-text-secondary);
+  }
+}
+
+// --- Section Title Prestige ---
+.section-title-gradient {
+  font-weight: 700;
+  color: var(--sp-accent-gold-light);
+  letter-spacing: 0.5px;
+}
+
+// --- Modal Glassmorphism Override ---
+.modal-glass {
+  .modal-content {
+    background: var(--sp-bg-secondary) !important;
+    border: 1px solid var(--sp-border-glass) !important;
+    border-radius: var(--sp-radius) !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    color: var(--sp-text-primary);
+  }
+
+  .modal-header {
+    border-bottom: 1px solid var(--sp-border-glass) !important;
+
+    .btn-close {
+      filter: invert(1) grayscale(100%) brightness(200%);
+    }
+  }
+
+  .modal-footer {
+    border-top: 1px solid var(--sp-border-glass) !important;
+  }
+
+  .modal-title {
+    font-weight: 700;
+    color: var(--sp-text-primary);
+  }
+}
+
+// --- Settings Menu Item ---
+.settings-menu-item {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid var(--sp-border-glass) !important;
+  border-radius: var(--sp-radius-sm) !important;
+  color: var(--sp-text-primary) !important;
+  padding: 16px 20px !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  &:hover {
+    background: rgba(139, 92, 246, 0.1) !important;
+    border-color: rgba(139, 92, 246, 0.3) !important;
+    transform: translateX(4px);
+  }
+
+  .menu-icon {
+    color: var(--sp-accent-purple-light);
+    font-size: 1.1rem;
+  }
+
+  .menu-arrow {
+    color: var(--sp-text-muted);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover .menu-arrow {
+    transform: translateX(4px);
+    color: var(--sp-accent-purple-light);
+  }
+}
+
+// =============================================
+//  dApp Layout Containers (centered, focused)
+// =============================================
+.sp-page {
+  animation: sp-fadeIn 0.4s ease-out;
+}
+
+// Centered dApp container — like PancakeSwap / Raydium
+.dapp-container {
+  max-width: 900px;
+  margin: 0 auto;
+  animation: sp-fadeInUp 0.5s ease-out;
+}
+
+.dapp-container-wide {
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: sp-fadeInUp 0.5s ease-out;
+}
+
+.dapp-container-narrow {
+  max-width: 520px;
+  margin: 0 auto;
+  animation: sp-fadeInUp 0.5s ease-out;
+}
+
+// dApp Page Header — clean, minimal
+.dapp-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-top: 8px;
+
+  .dapp-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--sp-text-primary);
+    margin-bottom: 4px;
+  }
+
+  .dapp-subtitle {
+    font-size: 0.85rem;
+    color: var(--sp-text-muted);
+  }
+}
+
+// dApp Section Divider
+.dapp-divider {
+  border: none;
+  height: 1px;
+  background: var(--sp-border-glass);
+  margin: 24px 0;
+}
+
+// --- Referral Link Box ---
+.referral-link-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--sp-border-glass);
+  border-radius: var(--sp-radius-sm);
+  padding: 12px 16px;
+  color: var(--sp-accent-cyan);
+  word-break: break-all;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+}
+
+// --- Text Helpers ---
+.sp-text-primary {
+  color: var(--sp-text-primary) !important;
+}
+
+.sp-text-secondary {
+  color: var(--sp-text-secondary) !important;
+}
+
+.sp-text-muted {
+  color: var(--sp-text-muted) !important;
+}
+
+.sp-text-purple {
+  color: var(--sp-accent-purple-light) !important;
+}
+
+.sp-text-cyan {
+  color: var(--sp-accent-cyan) !important;
+}
+
+.sp-text-green {
+  color: var(--sp-accent-green-light) !important;
+}
+
+// =============================================
+//  CRYPTO dApp NAVBAR
+// =============================================
+.dapp-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(6, 8, 26, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--sp-border-glass);
+  padding: 0 24px;
+}
+
+.dapp-navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.dapp-navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.dapp-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.dapp-brand-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--sp-text-primary);
+  letter-spacing: 0.5px;
+}
+
+.dapp-nav-links {
+  display: none;
+  align-items: center;
+  gap: 4px;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.dapp-nav-link {
+  color: var(--sp-text-muted);
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  position: relative;
+
+  &:hover {
+    color: var(--sp-text-primary);
+    background: rgba(30, 64, 175, 0.08);
+  }
+
+  &.active {
+    color: var(--sp-text-primary);
+    background: rgba(30, 64, 175, 0.12);
+    font-weight: 600;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 24px;
+      height: 2px;
+      background: var(--sp-gradient-prestige);
+      border-radius: 2px;
+    }
+  }
+}
+
+.dapp-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dapp-logout-btn {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  background: rgba(239, 68, 68, 0.06);
+  color: #fca5a5;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+
+  &:hover {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.4);
+  }
+}
+
+.dapp-mobile-toggle {
+  background: transparent;
+  border: none;
+  color: var(--sp-text-secondary);
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  &:hover {
+    color: var(--sp-text-primary);
+  }
+}
+
+// Mobile dropdown menu
+.dapp-mobile-menu {
+  background: rgba(6, 8, 26, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--sp-border-glass);
+  padding: 8px 16px 16px;
+  animation: sp-fadeInUp 0.25s ease-out;
+}
+
+.dapp-mobile-link {
+  display: block;
+  color: var(--sp-text-secondary);
+  text-decoration: none;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+
+  &:hover,
+  &.active {
+    color: var(--sp-text-primary);
+    background: rgba(30, 64, 175, 0.1);
+  }
+
+  &.active {
+    font-weight: 600;
+    border-left: 3px solid;
+    border-image: var(--sp-gradient-prestige) 1;
+  }
+}
+
+.dapp-mobile-logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  background: rgba(239, 68, 68, 0.06);
+  color: #fca5a5;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(239, 68, 68, 0.15);
+  }
+}
+
+// =============================================
+//  dApp MAIN CONTENT AREA
+// =============================================
+.dapp-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--sp-gradient-bg);
+}
+
+.dapp-main {
+  flex: 1;
+  padding: 32px 24px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+// =============================================
+//  dApp FOOTER
+// =============================================
+.dapp-footer {
+  padding: 20px 24px;
+  border-top: 1px solid var(--sp-border-glass);
+  text-align: center;
+}
+
+.dapp-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--sp-text-muted);
+  font-size: 0.8rem;
+}
+
+.dapp-footer-dot {
+  opacity: 0.4;
+}
+
+// =============================================
+//  PAGE HEADER (breadcrumb override — simplified)
+// =============================================
+.page-header {
+  background: transparent !important;
+}
+
+// =============================================
+//  dApp BATCH ROWS (replaces table)
+// =============================================
+.dapp-batch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.dapp-batch-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--sp-border-glass);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(30, 64, 175, 0.05);
+    border-color: rgba(30, 64, 175, 0.2);
+  }
+}
+
+.dapp-batch-id {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 90px;
+  font-size: 1rem;
+  color: var(--sp-text-primary);
+}
+
+.dapp-batch-info {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+.dapp-batch-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dapp-batch-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--sp-text-muted);
+  font-weight: 600;
+}
+
+.dapp-batch-value {
+  font-size: 0.85rem;
+  color: var(--sp-text-primary);
+  font-weight: 500;
+}
+
+// =============================================
+//  dApp TRANSACTION ROWS (replaces table)
+// =============================================
+.dapp-tx-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dapp-tx-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--sp-border-glass);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(30, 64, 175, 0.05);
+    border-color: rgba(30, 64, 175, 0.2);
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+.dapp-tx-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 220px;
+  flex-shrink: 0;
+
+  @media (max-width: 576px) {
+    min-width: auto;
+  }
+}
+
+.dapp-tx-date {
+  font-size: 0.8rem;
+  color: var(--sp-text-muted);
+}
+
+.dapp-tx-desc {
+  font-size: 0.85rem;
+  color: var(--sp-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+
+  @media (max-width: 576px) {
+    white-space: normal;
+  }
+}
+
+// =============================================
+//  dApp PAGINATION
+// =============================================
+.dapp-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--sp-border-glass);
+}
+
+.dapp-page-btn {
+  color: var(--sp-text-muted) !important;
+  text-decoration: none !important;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    color: var(--sp-text-primary) !important;
+    background: rgba(30, 64, 175, 0.1);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
+}
+
+.dapp-page-info {
+  font-size: 0.8rem;
+  color: var(--sp-text-muted);
+  font-weight: 500;
+}
+
+// =============================================
+//  GLOBAL BODY DARK MODE OVERRIDE
+// =============================================
+body {
+  background: var(--sp-bg-primary) !important;
+  color: var(--sp-text-primary) !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+// =============================================
+//  CUSTOM SCROLLBAR (Global)
+// =============================================
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sp-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(30, 64, 175, 0.3);
+  border-radius: 6px;
+
+  &:hover {
+    background: rgba(30, 64, 175, 0.5);
+  }
+}
+
+// =============================================
+//  SIMPLEBAR (Sidebar scroll)
+// =============================================
+.pc-sidebar .simplebar-scrollbar::before {
+  background: rgba(212, 168, 83, 0.3) !important;
+  border-radius: 6px;
+}
+
+// =============================================
+//  PC-CONTENT Padding & Spacing
+// =============================================
+.pc-content {
+  padding: 24px 28px !important;
+}
+
+// =============================================
+//  BREADCRUMB Separator
+// =============================================
+.breadcrumb-item+.breadcrumb-item::before {
+  color: var(--sp-text-muted) !important;
+  content: "›" !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+// =============================================
+//  FORM LABELS (global dark mode)  
+// =============================================
+.form-label {
+  color: var(--sp-text-secondary);
+}
+
+// =============================================
+//  PAGINATION (dark mode override)
+// =============================================
+.pagination {
+  .page-link {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border-color: var(--sp-border-glass) !important;
+    color: var(--sp-text-secondary) !important;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba(30, 64, 175, 0.1) !important;
+      border-color: rgba(30, 64, 175, 0.3) !important;
+      color: var(--sp-text-primary) !important;
+    }
+  }
+
+  .page-item.active .page-link {
+    background: var(--sp-accent-purple) !important;
+    border-color: var(--sp-accent-purple) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 12px var(--sp-glow-purple);
+  }
+
+  .page-item.disabled .page-link {
+    background: rgba(255, 255, 255, 0.02) !important;
+    color: var(--sp-text-muted) !important;
+    opacity: 0.5;
+  }
+}
+
+// =============================================
+//  TOAST override (dark mode)
+// =============================================
+.Toastify__toast {
+  background: var(--sp-bg-secondary) !important;
+  border: 1px solid var(--sp-border-glass) !important;
+  color: var(--sp-text-primary) !important;
+  border-radius: var(--sp-radius-sm) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.Toastify__close-button {
+  color: var(--sp-text-muted) !important;
+}
+
+.Toastify__progress-bar {
+  background: var(--sp-gradient-prestige) !important;
+}
+
+// =============================================
+//  SELECT / DROPDOWN (dark mode)
+// =============================================
+.form-select,
+select.form-control {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid var(--sp-border-glass) !important;
+  color: var(--sp-text-primary) !important;
+  border-radius: var(--sp-radius-xs) !important;
+
+  &:focus {
+    border-color: var(--sp-accent-purple) !important;
+    box-shadow: 0 0 0 3px var(--sp-glow-purple) !important;
+  }
+
+  option {
+    background: var(--sp-bg-secondary);
+    color: var(--sp-text-primary);
+  }
+}
+
+// =============================================
+//  CARD .card-header h5 / titles (dark override)
+// =============================================
+.card-glass .card-header h5,
+.card-glass .card-header .card-title {
+  color: var(--sp-text-primary) !important;
+  font-weight: 700;
+}
+
+// =============================================
+//  "Show entries" text + search icon
+// =============================================
+.sp-text-secondary,
+.text-muted {
+  color: var(--sp-text-secondary) !important;
+}
+
+// --- Responsive Adjustments ---
+@media (max-width: 576px) {
+  .pc-content {
+    padding: 16px 14px !important;
+  }
+
+  .countdown-container {
+    gap: 4px;
+  }
+
+  .countdown-box {
+    min-width: 55px;
+    padding: 10px 8px;
+
+    .countdown-value {
+      font-size: 1.3rem;
+    }
+
+    .countdown-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .countdown-separator {
+    font-size: 1rem;
+  }
+
+  .stat-card .stat-value {
+    font-size: 1.3rem;
+  }
+
+  .sp-login-card .card-body {
+    padding: 1.5rem !important;
+  }
+}
+
+// --- Z Fold (280px) ---
+@media (max-width: 320px) {
+  .countdown-container {
+    gap: 2px;
+  }
+
+  .countdown-box {
+    min-width: 45px;
+    padding: 8px 5px;
+
+    .countdown-value {
+      font-size: 1.1rem;
+    }
+
+    .countdown-label {
+      font-size: 0.55rem;
+      letter-spacing: 0;
+    }
+  }
+
+  .countdown-separator {
+    font-size: 0.85rem;
+  }
+}
+
+// =============================================
+//  New Page Components — Roadmap / Rank / Tokenomics / Withdrawal
+// =============================================
+
+// --- Roadmap Timeline ---
+.roadmap-timeline {
+  padding-left: 0;
+}
+
+.roadmap-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.roadmap-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 18px;
+}
+
+.roadmap-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--sp-accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--sp-bg-primary);
+}
+
+.roadmap-line {
+  width: 2px;
+  flex: 1;
+  min-height: 40px;
+  background: rgba(0, 212, 255, 0.15);
+  margin: 4px 0;
+}
+
+.roadmap-card {
+  flex: 1;
+}
+
+.roadmap-card-upcoming {
+  @extend .card-glass;
+  animation: sp-pulseGlow 3s ease-in-out infinite;
+}
+
+// --- Tab Chip ---
+.tab-chip {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--sp-border-glass);
+  border-radius: 20px;
+  color: var(--sp-text-muted);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 14px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: rgba(0, 212, 255, 0.3);
+    color: var(--sp-accent-cyan);
+  }
+
+  &.active {
+    background: rgba(0, 212, 255, 0.12);
+    border-color: rgba(0, 212, 255, 0.4);
+    color: var(--sp-accent-cyan);
+  }
+}
+
+// --- SP Table & Leaderboard (Custom) ---
+.table-sp, .sp-table {
+  color: var(--sp-text-primary);
+
+  thead {
+    // Exact user-requested solid space purple header for clarity
+    background: #1b0a42 !important;
+    border-bottom: 1px solid rgba(124, 60, 245, 1) !important;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    
+    th {
+      background: transparent;
+      border: none !important;
+      color: #e2e8f0 !important;
+      font-size: 0.85rem !important;
+      font-weight: 600 !important;
+      padding: 16px 20px !important;
+    }
+  }
+
+  tbody td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    color: var(--sp-text-secondary);
+    font-size: 0.85rem;
+    padding: 12px;
+    vertical-align: middle;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none !important;
+  }
+
+  tbody tr {
+    transition: all 0.3s ease;
+    background-color: transparent;
+    
+    &:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.02) !important;
+    }
+
+    &:hover td {
+      background: rgba(124, 60, 245, 0.1) !important;
+    }
+  }
+}
+
+// --- Icon Ghost Button ---
+.btn-icon-ghost {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--sp-border-glass);
+  border-radius: 6px;
+  color: var(--sp-text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  padding: 6px 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: rgba(0, 212, 255, 0.3);
+    color: var(--sp-accent-cyan);
+  }
+}
