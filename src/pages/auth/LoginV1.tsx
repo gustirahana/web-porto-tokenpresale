@@ -126,13 +126,13 @@ const LoginV1 = () => {
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
                             <label className="form-label sp-text-secondary fw-semibold" style={{ fontSize: '0.85rem' }}>
-                                Wallet Address (SOL)
+                                Username or wallet address
                             </label>
                             <input
                                 type="text"
                                 className="form-control input-dark"
                                 name="username"
-                                placeholder="Enter your Solana wallet address"
+                                placeholder="Enter your username or Solana wallet address"
                                 value={credentials.username}
                                 onChange={handleChange}
                                 required
